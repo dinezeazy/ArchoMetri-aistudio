@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
             </p>
             <div className="flex space-x-4">
                {['IG', 'LI', 'VM'].map(s => (
-                 <div key={s} className="w-12 h-12 rounded-2xl border border-white/10 flex items-center justify-center text-[10px] font-black hover:border-brand hover:text-brand transition-all cursor-pointer">
+                 <div key={s} className="w-12 h-12 rounded-2xl border border-white/10 flex items-center justify-center text-[10px] font-black hover:border-brand hover:text-brand transition-all cursor-pointer text-white">
                    {s}
                  </div>
                ))}

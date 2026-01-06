@@ -13,7 +13,7 @@ const About: React.FC = () => {
             className="text-center mb-40"
           >
             <span className="bg-brand/10 text-brand px-5 py-1.5 rounded-full text-[9px] font-black uppercase tracking-[0.5em] mb-10 block w-fit mx-auto">The Collective</span>
-            <h1 className="text-7xl md:text-[120px] font-black uppercase tracking-tighter mb-12 leading-[0.85]">
+            <h1 className="text-7xl md:text-[120px] font-black uppercase tracking-tighter mb-12 leading-[0.85] text-white">
               Archo<span className="text-outline-white italic">Metri</span>
             </h1>
             <p className="text-2xl text-zinc-400 font-medium leading-relaxed max-w-3xl mx-auto">

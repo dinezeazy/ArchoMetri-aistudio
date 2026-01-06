@@ -36,24 +36,24 @@ const Header: React.FC = () => {
           <img 
             src={LOGO_WHITE} 
             alt="ArchoMetri Logo" 
-            className="h-10 md:h-12 w-auto object-contain transition-all duration-500 group-hover:brightness-125"
+            className="h-10 md:h-12 w-auto object-contain transition-all duration-500 group-hover:brightness-75"
           />
         </motion.a>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center space-x-2 bg-white/5 p-1.5 rounded-full border border-white/10">
+        <div className="hidden md:flex items-center space-x-2 bg-white/5 p-1.5 rounded-full border border-white/5">
           {NAVIGATION.map((item) => (
             <motion.a
               key={item.name}
               href={item.href}
               className={`relative px-6 py-2 text-[11px] font-bold uppercase tracking-widest transition-all rounded-full overflow-hidden ${
-                currentPath === item.href ? 'text-black' : 'text-zinc-400 hover:text-white'
+                currentPath === item.href ? 'text-black' : 'text-zinc-500 hover:text-white'
               }`}
             >
               {currentPath === item.href && (
                 <motion.div 
                   layoutId="nav-bg"
-                  className="absolute inset-0 bg-brand z-0"
+                  className="absolute inset-0 bg-white z-0"
                   transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                 />
               )}
@@ -68,7 +68,7 @@ const Header: React.FC = () => {
           href={WHATSAPP_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden md:block px-8 py-3 bg-brand/10 border border-brand/20 text-brand hover:bg-brand hover:text-black text-[11px] font-black uppercase tracking-widest transition-all duration-500 rounded-full"
+          className="hidden md:block px-8 py-3 bg-brand border border-brand/20 text-black text-[11px] font-black uppercase tracking-widest transition-all duration-500 rounded-full hover:bg-white"
         >
           Inquire
         </motion.a>
@@ -91,7 +91,7 @@ const Header: React.FC = () => {
             initial={{ opacity: 0, scale: 1.1 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 1.1 }}
-            className="md:hidden fixed inset-0 bg-black/95 backdrop-blur-3xl z-40 flex flex-col p-8 justify-center items-center"
+            className="md:hidden fixed inset-0 bg-black z-40 flex flex-col p-8 justify-center items-center"
           >
             <div className="space-y-4 text-center">
               {NAVIGATION.map((item, idx) => (
@@ -102,7 +102,7 @@ const Header: React.FC = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: idx * 0.1 }}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="block text-4xl font-black uppercase tracking-tighter hover:text-brand transition-colors py-2"
+                  className="block text-4xl font-black uppercase tracking-tighter text-white hover:text-brand transition-colors py-2"
                 >
                   {item.name}
                 </motion.a>

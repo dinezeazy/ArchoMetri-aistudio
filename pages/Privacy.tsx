@@ -13,7 +13,7 @@ const Privacy: React.FC = () => {
             className="mb-24"
           >
             <span className="bg-brand/10 text-brand px-4 py-1.5 rounded-full text-[9px] font-black uppercase tracking-[0.5em] mb-8 block w-fit">Legal</span>
-            <h1 className="text-6xl md:text-8xl font-black uppercase tracking-tighter mb-12 leading-none">
+            <h1 className="text-6xl md:text-8xl font-black uppercase tracking-tighter mb-12 leading-none text-white">
               Privacy <br /><span className="text-outline-white italic">Protocol.</span>
             </h1>
             <p className="text-xl text-zinc-500 font-medium leading-relaxed">

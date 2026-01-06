@@ -36,7 +36,7 @@ const Gallery: React.FC = () => {
           >
             <div>
               <span className="bg-brand/10 text-brand px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.4em] mb-6 block w-fit">The Archive</span>
-              <h1 className="text-6xl md:text-9xl font-black uppercase tracking-tighter leading-[0.85]">
+              <h1 className="text-6xl md:text-9xl font-black uppercase tracking-tighter leading-[0.85] text-white">
                 Visual <br /><span className="text-outline-white italic">Legacies.</span>
               </h1>
             </div>
@@ -119,7 +119,7 @@ const Gallery: React.FC = () => {
                   {/* Text Content */}
                   <div className="mt-8 px-4 flex justify-between items-start">
                     <div>
-                      <h3 className="text-2xl font-black uppercase tracking-tighter mb-2 group-hover:text-brand transition-colors">
+                      <h3 className="text-2xl font-black uppercase tracking-tighter mb-2 group-hover:text-brand transition-colors text-white">
                         {project.title}
                       </h3>
                       <p className="text-zinc-500 text-sm font-medium leading-relaxed max-w-sm">
@@ -134,12 +134,6 @@ const Gallery: React.FC = () => {
               ))}
             </AnimatePresence>
           </motion.div>
-          
-          {filteredProjects.length === 0 && (
-            <div className="py-40 text-center">
-              <p className="text-zinc-600 text-[10px] font-black uppercase tracking-[0.5em]">No projects found in this category.</p>
-            </div>
-          )}
         </div>
       </section>
 
@@ -170,7 +164,6 @@ const Gallery: React.FC = () => {
               exit={{ scale: 0.9, opacity: 0, y: 30 }}
               className="w-full max-w-6xl aspect-video bg-black shadow-[0_0_100px_rgba(169,247,25,0.2)] relative border border-white/10 rounded-[3rem] overflow-hidden"
             >
-              {/* Note: This is a placeholder for Bunny.net / Iframe Integration */}
               <iframe 
                 src={`${activeVideo}${activeVideo.includes('?') ? '&' : '?'}autoplay=1`} 
                 className="w-full h-full"
@@ -185,7 +178,6 @@ const Gallery: React.FC = () => {
         )}
       </AnimatePresence>
 
-      {/* Call to Action */}
       <section className="py-40 bg-zinc-950 rounded-t-[5rem]">
         <div className="container mx-auto px-6 text-center">
           <motion.div
@@ -193,7 +185,7 @@ const Gallery: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-5xl md:text-8xl font-black uppercase tracking-tighter mb-12 leading-none">
+            <h2 className="text-5xl md:text-8xl font-black uppercase tracking-tighter mb-12 leading-none text-white">
               Capture your <br /><span className="text-brand">Infrastructure.</span>
             </h2>
             <div className="flex flex-wrap justify-center gap-6">

@@ -36,7 +36,7 @@ const Home: React.FC = () => {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7, duration: 0.8 }}
-              className="text-5xl md:text-[110px] font-extrabold uppercase leading-[0.9] tracking-tighter mb-10"
+              className="text-5xl md:text-[110px] font-extrabold uppercase leading-[0.9] tracking-tighter mb-10 text-white"
             >
               Documenting <br />
               <span className="text-outline-white italic">The Growth.</span>
@@ -102,7 +102,7 @@ const Home: React.FC = () => {
               viewport={{ once: true }}
               className="md:col-span-5 space-y-10"
             >
-              <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter leading-none">
+              <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter leading-none text-white">
                 Engineering <br /> <span className="text-brand">Milestones.</span>
               </h2>
               <p className="text-zinc-500 text-xl leading-relaxed font-medium">
@@ -125,7 +125,7 @@ const Home: React.FC = () => {
                 initial={{ opacity: 0, scale: 0.9, y: 40 }}
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="relative z-10 aspect-[4/3] overflow-hidden rounded-[3rem] shadow-2xl"
+                className="relative z-10 aspect-[4/3] overflow-hidden rounded-[3rem] shadow-2xl bg-zinc-900 border border-white/5"
               >
                 <img 
                   src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&q=80&w=1200" 
