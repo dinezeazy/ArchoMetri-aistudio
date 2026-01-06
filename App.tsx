@@ -8,6 +8,8 @@ import Gallery from './pages/Gallery';
 import Services from './pages/Services';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import Privacy from './pages/Privacy';
+import Security from './pages/Security';
 
 const App: React.FC = () => {
   const [currentPath, setCurrentPath] = useState(window.location.hash || '#/');
@@ -29,6 +31,8 @@ const App: React.FC = () => {
       case '#/services': return <Services />;
       case '#/about': return <About />;
       case '#/contact': return <Contact />;
+      case '#/privacy': return <Privacy />;
+      case '#/security': return <Security />;
       default: return <Home />;
     }
   };

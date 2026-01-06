@@ -8,7 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
         theme: {
@@ -17,8 +17,12 @@
               brand: '#A9F719',
             },
             fontFamily: {
-              sans: ['Inter', 'sans-serif'],
+              sans: ['"Plus Jakarta Sans"', 'sans-serif'],
             },
+            borderRadius: {
+              '4xl': '2rem',
+              '5xl': '3rem',
+            }
           }
         }
       }
@@ -28,6 +32,7 @@
             background-color: #0a0a0a;
             color: #ffffff;
             overflow-x: hidden;
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
         .text-outline-white {
             -webkit-text-stroke: 1px rgba(255,255,255,0.3);
@@ -38,17 +43,21 @@
             color: #000;
         }
         ::-webkit-scrollbar {
-            width: 6px;
+            width: 8px;
         }
         ::-webkit-scrollbar-track {
             background: #0a0a0a;
         }
         ::-webkit-scrollbar-thumb {
-            background: #333;
-            border-radius: 10px;
+            background: #222;
+            border-radius: 20px;
         }
         ::-webkit-scrollbar-thumb:hover {
             background: #A9F719;
+        }
+        /* Smooth rounding for all interactive elements */
+        button, a, input, textarea, select {
+            transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
         }
     </style>
 <script type="importmap">

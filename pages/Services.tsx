@@ -1,35 +1,37 @@
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 
 const Services: React.FC = () => {
-  const container = {
+  // Explicitly type container variants to avoid inference issues
+  const container: Variants = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
-      transition: { staggerChildren: 0.2 }
+      transition: { staggerChildren: 0.3 }
     }
   };
 
-  const item = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0 }
+  // Explicitly type item variants to fix 'ease' property type error where 'string' is too broad for Easing
+  const item: Variants = {
+    hidden: { opacity: 0, y: 40 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
   };
 
   return (
-    <div className="pt-40 pb-32 bg-black text-white min-h-screen">
+    <div className="pt-48 pb-32 bg-black text-white min-h-screen">
       <div className="container mx-auto px-6">
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          className="max-w-4xl mb-32"
+          className="max-w-4xl mb-40"
         >
-          <span className="text-brand text-xs font-bold uppercase tracking-[0.5em] mb-4 block">Expertise</span>
-          <h1 className="text-6xl md:text-8xl font-black uppercase tracking-tighter mb-8 leading-[0.9]">
-            Visual <br /><span className="text-outline-white">Precision.</span>
+          <span className="bg-brand/10 text-brand px-4 py-1.5 rounded-full text-[9px] font-black uppercase tracking-[0.5em] mb-8 block w-fit">Capabilities</span>
+          <h1 className="text-6xl md:text-[110px] font-black uppercase tracking-tighter mb-12 leading-[0.85]">
+            Visual <br /><span className="text-outline-white italic">Precision.</span>
           </h1>
-          <p className="text-xl text-zinc-500 leading-relaxed font-light">
-            Providing high-fidelity visual documentation through advanced photography and cinema-grade videography techniques tailored for the industrial sector.
+          <p className="text-2xl text-zinc-500 leading-relaxed font-medium">
+            Providing high-fidelity visual documentation through surgical camera work and cinema-grade videography.
           </p>
         </motion.div>
 
@@ -38,33 +40,32 @@ const Services: React.FC = () => {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="space-y-48"
+          className="space-y-64"
         >
           {/* Service 1 */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-            <motion.div variants={item} className="relative aspect-video overflow-hidden">
+            <motion.div variants={item} className="relative aspect-video overflow-hidden rounded-[4rem] shadow-2xl border border-white/5">
               <img 
                 src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=1000" 
                 alt="Architecture"
-                className="w-full h-full object-cover grayscale brightness-75 hover:scale-105 transition-transform duration-1000"
+                className="w-full h-full object-cover grayscale brightness-75 hover:scale-105 transition-all duration-1000 hover:grayscale-0"
               />
-              <div className="absolute top-0 left-0 w-2 h-2 bg-brand shadow-[0_0_10px_#A9F719]"></div>
             </motion.div>
-            <motion.div variants={item} className="space-y-8">
-              <h2 className="text-4xl font-black uppercase tracking-tighter">Architectural <span className="text-brand">Narratives</span></h2>
-              <p className="text-zinc-500 leading-relaxed font-light text-lg">
-                We capture structures as dynamic sculptures. Utilizing tilt-shift optics and advanced exposure blending to showcase volume, texture, and light as the architect intended.
+            <motion.div variants={item} className="space-y-10">
+              <h2 className="text-5xl font-black uppercase tracking-tighter leading-none">Architectural <br /><span className="text-brand">Narratives</span></h2>
+              <p className="text-zinc-500 leading-relaxed font-medium text-xl">
+                We capture structures as evolving sculptures. From light-play in residential spaces to the geometric symmetry of corporate glass.
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {[
                   'Exterior Facades',
                   'Interior Atmosphere',
-                  'Twilight Blue-Hour',
+                  'Twilight Motion',
                   'Aerial Perspective'
                 ].map(s => (
-                  <div key={s} className="flex items-center space-x-3 group">
-                    <div className="w-6 h-[1px] bg-brand group-hover:w-10 transition-all"></div>
-                    <span className="text-[10px] font-black uppercase tracking-widest text-zinc-400 group-hover:text-white">{s}</span>
+                  <div key={s} className="flex items-center space-x-4 group p-4 bg-zinc-900/40 rounded-2xl border border-white/5 hover:border-brand/30 transition-all">
+                    <div className="w-1.5 h-1.5 bg-brand rounded-full shadow-[0_0_8px_#A9F719]"></div>
+                    <span className="text-[10px] font-black uppercase tracking-widest text-zinc-400 group-hover:text-white transition-colors">{s}</span>
                   </div>
                 ))}
               </div>
@@ -73,26 +74,25 @@ const Services: React.FC = () => {
 
           {/* Service 2 */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-            <motion.div variants={item} className="order-2 lg:order-1 space-y-8 text-right lg:text-left">
-              <h2 className="text-4xl font-black uppercase tracking-tighter">Industrial <span className="text-brand">Scale</span></h2>
-              <p className="text-zinc-500 leading-relaxed font-light text-lg">
-                Documenting the raw power of engineering. From logistics hubs to manufacturing plants, we provide technically accurate visuals that emphasize operational magnitude.
+            <motion.div variants={item} className="order-2 lg:order-1 space-y-10">
+              <h2 className="text-5xl font-black uppercase tracking-tighter leading-none">Industrial <br /><span className="text-brand">Scale</span></h2>
+              <p className="text-zinc-500 leading-relaxed font-medium text-xl">
+                Documenting the magnitude of engineering. We integrate with site operations to provide technically accurate, cinematically impressive documentation.
               </p>
-              <div className="flex flex-wrap justify-end lg:justify-start gap-4">
-                 {['Oil & Gas', 'Manufacturing', 'Logistics', 'Energy'].map(tag => (
-                   <span key={tag} className="px-4 py-2 border border-white/5 text-[9px] font-black uppercase tracking-widest text-zinc-500">
+              <div className="flex flex-wrap gap-4">
+                 {['Oil & Gas', 'Manufacturing', 'Steel', 'Logistics'].map(tag => (
+                   <span key={tag} className="px-8 py-3 bg-white/5 border border-white/10 rounded-full text-[10px] font-black uppercase tracking-[0.2em] text-zinc-400 hover:text-brand hover:border-brand transition-all cursor-default">
                      {tag}
                    </span>
                  ))}
               </div>
             </motion.div>
-            <motion.div variants={item} className="order-1 lg:order-2 relative aspect-video overflow-hidden">
+            <motion.div variants={item} className="order-1 lg:order-2 relative aspect-[4/3] overflow-hidden rounded-[4rem] shadow-2xl border border-white/5">
               <img 
                 src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1000" 
                 alt="Industrial"
-                className="w-full h-full object-cover grayscale brightness-75 hover:scale-105 transition-transform duration-1000"
+                className="w-full h-full object-cover grayscale brightness-75 hover:scale-105 transition-all duration-1000 hover:grayscale-0"
               />
-              <div className="absolute bottom-0 right-0 w-2 h-2 bg-brand shadow-[0_0_10px_#A9F719]"></div>
             </motion.div>
           </div>
         </motion.div>
