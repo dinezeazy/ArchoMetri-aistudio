@@ -1,0 +1,7 @@
+{
+  "name": "ArchoMetri - Architecture & Industrial Photography",
+  "description": "Premium photography and videography services specializing in architectural and industrial projects.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
